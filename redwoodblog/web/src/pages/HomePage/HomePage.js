@@ -1,4 +1,4 @@
-import MainLayout from "src/layouts/MainLayout/MainLayout";
+import MainLayout from 'src/layouts/MainLayout/MainLayout'
 
 const HomePage = () => {
   return (

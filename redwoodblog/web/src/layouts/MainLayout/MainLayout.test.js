@@ -6,6 +6,7 @@ describe('MainLayout', () => {
   afterEach(() => {
     cleanup()
   })
+
   it('renders successfully', () => {
     expect(() => {
       render(<MainLayout />)

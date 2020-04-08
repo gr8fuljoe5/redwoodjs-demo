@@ -4,9 +4,7 @@ const MainLayout = ({ children }) => {
   return (
     <>
       <header>
-        <h1>
-          <Link to={routes.home()}>My Blog</Link>
-        </h1>
+        <h1>My Blog</h1>
         <nav>
           <ul>
             <li>
@@ -19,6 +17,10 @@ const MainLayout = ({ children }) => {
       <footer>footer goes here</footer>
     </>
   )
+
+
+
+
 }
 
 export default MainLayout

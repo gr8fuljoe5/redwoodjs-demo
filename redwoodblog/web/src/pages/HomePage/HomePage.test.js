@@ -1,4 +1,4 @@
-import {cleanup, render} from '@testing-library/react'
+import { cleanup, render } from '@testing-library/react'
 
 import HomePage from './HomePage'
 
@@ -8,7 +8,7 @@ describe('HomePage', () => {
   })
   it('renders successfully', () => {
     expect(() => {
-      render(<HomePage/>)
+      render(<HomePage />)
     }).not.toThrow()
   })
 })
