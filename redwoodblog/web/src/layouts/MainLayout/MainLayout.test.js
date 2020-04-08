@@ -8,7 +8,7 @@ describe('MainLayout', () => {
   })
   it('renders successfully', () => {
     expect(() => {
-      render(<MainLayout/>)
+      render(<MainLayout />)
     }).not.toThrow()
   })
 })
