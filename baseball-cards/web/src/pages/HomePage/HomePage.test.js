@@ -1,5 +1,4 @@
 import { render, cleanup } from '@testing-library/react'
-
 import HomePage from './HomePage'
 
 describe('HomePage', () => {

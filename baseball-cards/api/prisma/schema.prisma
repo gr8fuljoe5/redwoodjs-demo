@@ -11,8 +11,11 @@ generator client {
 // Define your own datamodels here and run `yarn redwood db save` to create
 // migrations for them.
 // TODO: Please remove the following example:
-model UserExample {
+model Card {
   id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+  firstName String
+  lastName String
+  sport String
+  brand String
+
 }
