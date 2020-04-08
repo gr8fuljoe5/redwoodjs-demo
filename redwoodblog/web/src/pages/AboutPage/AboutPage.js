@@ -1,9 +1,11 @@
+import MainLayout from "src/layouts/MainLayout/MainLayout";
+
 const AboutPage = () => {
   return (
-    <div>
+    <MainLayout>
       <h1>AboutPage</h1>
       <p>Find me in ./web/src/pages/AboutPage/AboutPage.js</p>
-    </div>
+    </MainLayout>
   )
 }
 
