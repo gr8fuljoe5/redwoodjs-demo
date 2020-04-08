@@ -1,7 +1,8 @@
 export const QUERY = gql`
   query {
-    blogPosts {
+    posts {
       id
+      title
     }
   }
 `
