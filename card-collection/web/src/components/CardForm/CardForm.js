@@ -5,7 +5,9 @@ import {
   Label,
   TextField,
   Submit,
+  SelectField,
 } from '@redwoodjs/web'
+import { companies } from 'src/constants/companies'
 
 const CSS = {
   label: 'block mt-6 text-gray-700 font-semibold',
@@ -22,8 +24,17 @@ const CardForm = (props) => {
     props.onSave(data, props?.card?.id)
   }
 
+  const renderCompanies = () => {
+    let options = []
+    companies.forEach((company) => {
+      options.push(`<option value-{company}>{company}</option>`)
+      return options
+    })
+  }
+
   return (
     <div className="text-sm -mt-4">
+      <div>{renderCompanies()}</div>
       <Form onSubmit={onSubmit} error={props.error}>
         <FormError
           error={props.error}
@@ -51,13 +62,15 @@ const CardForm = (props) => {
           className={CSS.label}
           errorClassName={CSS.labelError}
         />
-        <TextField
+        <SelectField
           name="brand"
           defaultValue={props.card?.brand}
           className={CSS.input}
           errorClassName={CSS.inputError}
           validation={{ required: true }}
-        />
+        >
+          {renderCompanies()}
+        </SelectField>
         <FieldError name="brand" className={CSS.errorMessage} />
 
         <Label
