@@ -24,17 +24,8 @@ const CardForm = (props) => {
     props.onSave(data, props?.card?.id)
   }
 
-  const renderCompanies = () => {
-    let options = []
-    companies.forEach((company) => {
-      options.push(`<option value-{company}>{company}</option>`)
-      return options
-    })
-  }
-
   return (
     <div className="text-sm -mt-4">
-      <div>{renderCompanies()}</div>
       <Form onSubmit={onSubmit} error={props.error}>
         <FormError
           error={props.error}
@@ -44,7 +35,7 @@ const CardForm = (props) => {
         />
 
         <Label
-          name="name"
+          name="Player Name"
           className={CSS.label}
           errorClassName={CSS.labelError}
         />
@@ -69,7 +60,13 @@ const CardForm = (props) => {
           errorClassName={CSS.inputError}
           validation={{ required: true }}
         >
-          {renderCompanies()}
+          {companies.map((company, idx) => {
+            return (
+              <option value={company} key={idx}>
+                {company}
+              </option>
+            )
+          })}
         </SelectField>
         <FieldError name="brand" className={CSS.errorMessage} />
 
@@ -78,6 +75,7 @@ const CardForm = (props) => {
           className={CSS.label}
           errorClassName={CSS.labelError}
         />
+        {/*TODO: Create a dropdown with the years*/}
         <TextField
           name="year"
           defaultValue={props.card?.year}
@@ -134,6 +132,7 @@ const CardForm = (props) => {
           className={CSS.label}
           errorClassName={CSS.labelError}
         />
+        {/*TODO: Implement the file upload and preview for images*/}
         <TextField
           name="image"
           defaultValue={props.card?.image}
