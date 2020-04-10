@@ -55,6 +55,8 @@
     <column id="16" parent="6" name="postedAt">
       <Position>7</Position>
       <DataType>DATE|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;1970-01-01 00:00:00&apos;</DefaultExpression>
     </column>
     <column id="17" parent="6" name="set">
       <Position>8</Position>
@@ -68,104 +70,98 @@
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="19" parent="6" name="thumbnail">
+    <column id="19" parent="6" name="year">
       <Position>10</Position>
-      <DataType>TEXT|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>&apos;&apos;</DefaultExpression>
-    </column>
-    <column id="20" parent="6" name="year">
-      <Position>11</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
     </column>
-    <key id="21" parent="6">
+    <key id="20" parent="6">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="22" parent="7" name="revision">
+    <column id="21" parent="7" name="revision">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="23" parent="7" name="name">
+    <column id="22" parent="7" name="name">
       <Position>2</Position>
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="24" parent="7" name="datamodel">
+    <column id="23" parent="7" name="datamodel">
       <Position>3</Position>
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="25" parent="7" name="status">
+    <column id="24" parent="7" name="status">
       <Position>4</Position>
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="26" parent="7" name="applied">
+    <column id="25" parent="7" name="applied">
       <Position>5</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="27" parent="7" name="rolled_back">
+    <column id="26" parent="7" name="rolled_back">
       <Position>6</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="28" parent="7" name="datamodel_steps">
+    <column id="27" parent="7" name="datamodel_steps">
       <Position>7</Position>
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="29" parent="7" name="database_migration">
+    <column id="28" parent="7" name="database_migration">
       <Position>8</Position>
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="30" parent="7" name="errors">
+    <column id="29" parent="7" name="errors">
       <Position>9</Position>
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="31" parent="7" name="started_at">
+    <column id="30" parent="7" name="started_at">
       <Position>10</Position>
       <DataType>DATE|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="32" parent="7" name="finished_at">
+    <column id="31" parent="7" name="finished_at">
       <Position>11</Position>
       <DataType>DATE|0s</DataType>
     </column>
-    <key id="33" parent="7">
+    <key id="32" parent="7">
       <ColNames>revision</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="34" parent="8" name="type">
+    <column id="33" parent="8" name="type">
       <Position>1</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="35" parent="8" name="name">
+    <column id="34" parent="8" name="name">
       <Position>2</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="36" parent="8" name="tbl_name">
+    <column id="35" parent="8" name="tbl_name">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="37" parent="8" name="rootpage">
+    <column id="36" parent="8" name="rootpage">
       <Position>4</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="38" parent="8" name="sql">
+    <column id="37" parent="8" name="sql">
       <Position>5</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="39" parent="9" name="name">
+    <column id="38" parent="9" name="name">
       <Position>1</Position>
     </column>
-    <column id="40" parent="9" name="seq">
+    <column id="39" parent="9" name="seq">
       <Position>2</Position>
     </column>
   </database-model>
