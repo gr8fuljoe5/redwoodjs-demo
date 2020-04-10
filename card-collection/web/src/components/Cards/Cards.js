@@ -1,5 +1,7 @@
 import { useMutation } from '@redwoodjs/web'
 import { Link, routes } from '@redwoodjs/router'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
 
 const DELETE_POST_MUTATION = gql`
   mutation DeleteCardMutation($id: Int!) {
@@ -40,6 +42,16 @@ const CardsList = ({ cards }) => {
     }
   }
 
+  const displayImage = (path) => {
+    if(path){
+      return <img src={path} width={50} height={50} />
+    }
+  }
+
+  const isAutographed = (autographed) => {
+    return autographed ? <FontAwesomeIcon icon={faThumbsUp} /> : <FontAwesomeIcon icon={faThumbsDown} />
+  }
+
   return (
     <div className="bg-white text-gray-900 border rounded-lg overflow-x-scroll">
       <table className="table-auto w-full min-w-3xl text-sm">
@@ -71,8 +83,9 @@ const CardsList = ({ cards }) => {
               <td className="p-3">{truncate(card.set)}</td>
               <td className="p-3">{truncate(card.number)}</td>
               <td className="p-3">{truncate(card.sport)}</td>
-              <td className="p-3">{truncate(card.autographed)}</td>
-              <td className="p-3">{truncate(card.image)}</td>
+              <td className="p-3" style={{textAlign: 'center'}}>{isAutographed(card.autographed)}</td>
+              <td className="p-3">{displayImage(card.image)}</td>
+              {/*<td className="p-3">{truncate(card.image)}</td>*/}
               <td className="p-3">{timeTag(card.postedAt)}</td>
               <td className="p-3 pr-4 text-right whitespace-no-wrap">
                 <nav>
