@@ -2,6 +2,7 @@ import { useMutation } from '@redwoodjs/web'
 import { Link, routes } from '@redwoodjs/router'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
+import moment from 'moment';
 
 const DELETE_POST_MUTATION = gql`
   mutation DeleteCardMutation($id: Int!) {
@@ -24,7 +25,7 @@ const truncate = (text) => {
 const timeTag = (datetime) => {
   return (
     <time dateTime={datetime} title={datetime}>
-      {new Date(datetime).toUTCString()}
+      {moment(datetime).format("dddd, MMMM Do YYYY, h:mm:ss a")}
     </time>
   )
 }
@@ -85,7 +86,6 @@ const CardsList = ({ cards }) => {
               <td className="p-3">{truncate(card.sport)}</td>
               <td className="p-3" style={{textAlign: 'center'}}>{isAutographed(card.autographed)}</td>
               <td className="p-3">{displayImage(card.image)}</td>
-              {/*<td className="p-3">{truncate(card.image)}</td>*/}
               <td className="p-3">{timeTag(card.postedAt)}</td>
               <td className="p-3 pr-4 text-right whitespace-no-wrap">
                 <nav>
