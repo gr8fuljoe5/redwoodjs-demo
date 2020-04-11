@@ -25,7 +25,7 @@ const truncate = (text) => {
 const timeTag = (datetime) => {
   return (
     <time dateTime={datetime} title={datetime}>
-      {moment(datetime).format("dddd, MMMM Do YYYY, h:mm:ss a")}
+      {moment(datetime).format("ddd, MMMM Do YYYY, h:mm a")}
     </time>
   )
 }
