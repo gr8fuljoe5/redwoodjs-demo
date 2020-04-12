@@ -5,15 +5,14 @@ import {
   Label,
   TextField,
   Submit,
-  SelectField
+  SelectField,
 } from '@redwoodjs/web'
 
-import {manufacturers} from "src/constants/manufacturers";
-import {sports} from 'src/constants/sports'
-import {yearsByArray} from "src/utils/yearsByArray";
+import { manufacturers } from 'src/constants/manufacturers'
+import { sports } from 'src/constants/sports'
+import { yearsByArray } from 'src/utils/yearsByArray'
 
-const years = yearsByArray();
-
+const years = yearsByArray()
 
 const CSS = {
   label: 'block mt-6 text-gray-700 font-semibold',
@@ -27,9 +26,11 @@ const CSS = {
 
 const CardForm = (props) => {
   const onSubmit = (data) => {
-    const year = {year: parseInt(data.year)};
-    const autographed = {autographed: (data.year === 'true') ? true: false};
-    const payload = Object.assign({}, data, year, autographed);
+    const year = { year: parseInt(data.year) }
+    const autographed = {
+      autographed: data.autographed === 'true' ? true : false,
+    }
+    const payload = Object.assign({}, data, year, autographed)
     props.onSave(payload, props?.card?.id)
   }
 
@@ -70,9 +71,12 @@ const CardForm = (props) => {
           validation={{ required: true }}
         >
           {years.map((year, idx) => {
-            return <option value={year} key={idx}>{year}</option>
+            return (
+              <option value={year} key={idx}>
+                {year}
+              </option>
+            )
           })}
-
         </SelectField>
         <FieldError name="year" className={CSS.errorMessage} />
 
@@ -89,9 +93,12 @@ const CardForm = (props) => {
           validation={{ required: true }}
         >
           {manufacturers.map((company, idx) => {
-            return <option value={company} key={idx}>{company}</option>
+            return (
+              <option value={company} key={idx}>
+                {company}
+              </option>
+            )
           })}
-
         </SelectField>
         <FieldError name="manufacturer" className={CSS.errorMessage} />
 
@@ -136,7 +143,11 @@ const CardForm = (props) => {
           validation={{ required: true }}
         >
           {sports.map((sport, idx) => {
-            return <option value={sport} key={idx}>{sport}</option>
+            return (
+              <option value={sport} key={idx}>
+                {sport}
+              </option>
+            )
           })}
         </SelectField>
         <FieldError name="sport" className={CSS.errorMessage} />
@@ -155,7 +166,6 @@ const CardForm = (props) => {
         >
           <option value={true}>Yes</option>
           <option value={false}>No</option>
-
         </SelectField>
         <FieldError name="autographed" className={CSS.errorMessage} />
 

@@ -33,18 +33,26 @@ const HomePageDisplay = ({data}) => {
           number,
           sport,
           autographed,
-          image,
-          postedAt} = card;
+          image} = card;
+        console.log(autographed)
         return (
           <div key={idx}>
             <section>
               <h3>{player}</h3>
+              <ul>
+                <li>{manufacturer}</li>
+                <li>{set}</li>
+              </ul>
             </section>
             <aside>
+              <img src={image} />
               <ul>
                 <li>Sport: {sport}</li>
                 <li>Card Number: {number}</li>
                 <li>Year: {year}</li>
+                {autographed ? (
+                  <li>Autographed</li>
+                ) : null}
               </ul>
             </aside>
           </div>
