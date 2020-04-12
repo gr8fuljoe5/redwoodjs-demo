@@ -4,7 +4,7 @@ import filter from 'lodash/filter';
 const HomePageDisplay = ({data}) => {
   const [filteredData, setFilteredData] = useState({});
   const filterData = (value, column) => {
-    return filter(data, (o) => {
+    filter(data, (o) => {
       if(o[column] == value){
         setFilteredData(o);
       }
