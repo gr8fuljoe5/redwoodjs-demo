@@ -1,14 +1,15 @@
-import { useState } from 'react';
-import filter from 'lodash/filter';
+import {useState} from 'react';
 
 const HomePageDisplay = ({data}) => {
-  const [filteredData, setFilteredData] = useState({});
+  const [filteredData, setFilteredData] = useState([]);
   const filterData = (value, column) => {
-    filter(data, (o) => {
-      if(o[column] == value){
-        setFilteredData(o);
+    let dataSet = [];
+    data.filter((o) => {
+      if (o[column] === value) {
+        dataSet.push(o);
       }
-    })
+    });
+    setFilteredData(dataSet)
   };
 
   return (
@@ -23,7 +24,33 @@ const HomePageDisplay = ({data}) => {
         </select>
       </form>
       <h1>Hello</h1>
-      {JSON.stringify(filteredData)}
+      {filteredData.length > 0 && filteredData.map((card, idx) => {
+        const {id,
+          player,
+          year,
+          manufacturer,
+          set,
+          number,
+          sport,
+          autographed,
+          image,
+          postedAt} = card;
+        return (
+          <div key={idx}>
+            <section>
+              <h3>{player}</h3>
+            </section>
+            <aside>
+              <ul>
+                <li>Sport: {sport}</li>
+                <li>Card Number: {number}</li>
+                <li>Year: {year}</li>
+              </ul>
+            </aside>
+          </div>
+
+        )
+      })}
     </div>
 
   )
