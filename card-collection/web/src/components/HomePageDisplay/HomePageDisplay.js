@@ -36,6 +36,9 @@ const HomePageDisplay = ({ data }) => {
               >
                 <option value="Baseball">Baseball</option>
                 <option value="Football">Football</option>
+                <option value="Basketball">Basketball</option>
+                <option value="Hockey">Hockey</option>
+                <option value="Other">Other</option>
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <svg
