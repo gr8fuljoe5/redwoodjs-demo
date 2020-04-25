@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faThumbsDown, faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 import { manufacturers } from 'src/constants/manufacturers'
 
 const HomePageDisplay = ({ data }) => {
@@ -62,8 +64,12 @@ const HomePageDisplay = ({ data }) => {
                 id="grid-manufacturers"
               >
                 {manufacturers &&
-                  manufacturers.map((manufacturer) => {
-                    return <option value={manufacturer}>{manufacturer}</option>
+                  manufacturers.map((manufacturer, idx) => {
+                    return (
+                      <option value={manufacturer} key={idx}>
+                        {manufacturer}
+                      </option>
+                    )
                   })}
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -120,7 +126,20 @@ const HomePageDisplay = ({ data }) => {
                   <li>
                     <span className={'font-semibold'}>Set:</span> {set}
                   </li>
-                  {autographed ? <li>Autographed</li> : null}
+                  <li>
+                    <span className={'font-semibold'}>Autographed:</span>{' '}
+                    {autographed ? (
+                      <FontAwesomeIcon
+                        icon={faThumbsUp}
+                        className={'fill-current text-green-500'}
+                      />
+                    ) : (
+                      <FontAwesomeIcon
+                        icon={faThumbsDown}
+                        className={'fill-current text-red-500'}
+                      />
+                    )}
+                  </li>
                 </ul>
               </section>
               <aside className={'col-span-1 p-3'}>

@@ -1,5 +1,6 @@
+import { Link, routes } from '@redwoodjs/router'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faCodeBranch, faCogs } from '@fortawesome/free-solid-svg-icons'
 
 const Header = () => {
   return (
@@ -9,10 +10,19 @@ const Header = () => {
       >
         <h1>Paul's baseball card collection</h1>
       </div>
-      <div className={'text-gray-500'}>
-        <a href={'#'} className={'hover:text-gray-700'}>
-          <FontAwesomeIcon icon={faCoffee} />
-        </a>
+      <div className={'text-gray-500 mx-3'}>
+        <ul>
+          <li>
+            <a href={'https://github.com/gr8fuljoe5/redwoodjs-demo/tree/card-collection/card-collection'} className={'hover:text-gray-700'} target={"_blank"}>
+              <FontAwesomeIcon icon={faCodeBranch} />
+            </a>
+          </li>
+          <li>
+            <Link to={routes.cards()} className={'hover:text-gray-700'}>
+              <FontAwesomeIcon icon={faCogs} />
+            </Link>
+          </li>
+        </ul>
       </div>
     </header>
   )
