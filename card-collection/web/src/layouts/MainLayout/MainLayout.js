@@ -1,16 +1,11 @@
+import Header from 'src/components/Header'
 const MainLayout = ({ children }) => {
-  return <>
-    <header>
-      <h1>Paul's Baseball Card Collection</h1>
-      <nav>
-        <ul>
-          <li>Admin</li>
-        </ul>
-      </nav>
-    </header>
-    {children}
-
+  return (
+    <>
+      <Header />
+      <main className={'container mx-auto mt-24'}>{children}</main>
     </>
+  )
 }
 
 export default MainLayout
