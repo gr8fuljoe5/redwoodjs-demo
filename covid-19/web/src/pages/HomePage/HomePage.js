@@ -1,22 +1,18 @@
-import { useState } from 'react'
-import { Form, TextField, Submit } from '@redwoodjs/web'
+import { useState } from 'react';
+import { Form, TextField, Submit } from '@redwoodjs/web';
 
 const HomePage = () => {
   const [states, setStates] = useState();
   const onSubmit = (data) => {
     fetch(`https://covidtracking.com/api/v1/states/${data.state}/current.json`)
-      .then(response => response.json())
-      .then((json) => setStates(json))
-  }
+      .then((response) => response.json())
+      .then((json) => setStates(json));
+  };
 
   return (
     <>
-      <Form onSubmit={onSubmit} style={{fontSize: '2rem'}}>
-        <TextField
-          name="state"
-          placeholder="State"
-          maxLength="2"
-        />
+      <Form onSubmit={onSubmit} style={{ fontSize: '2rem' }}>
+        <TextField name="state" placeholder="State" maxLength="2" />
         <Submit>Go</Submit>
       </Form>
       {states && (
@@ -28,7 +24,7 @@ const HomePage = () => {
         </section>
       )}
     </>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

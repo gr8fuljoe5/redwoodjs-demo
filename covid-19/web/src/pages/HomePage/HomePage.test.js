@@ -1,14 +1,14 @@
-import { render, cleanup } from '@testing-library/react'
+import { render, cleanup } from '@testing-library/react';
 
-import HomePage from './HomePage'
+import HomePage from './HomePage';
 
 describe('HomePage', () => {
   afterEach(() => {
-    cleanup()
-  })
+    cleanup();
+  });
   it('renders successfully', () => {
     expect(() => {
-      render(<HomePage />)
-    }).not.toThrow()
-  })
-})
+      render(<HomePage />);
+    }).not.toThrow();
+  });
+});
