@@ -11,6 +11,8 @@ export const QUERY = gql`
       onVentilatorCurrently
       total
       totalTestResults
+      positive
+      negative
     }
   }
 `;

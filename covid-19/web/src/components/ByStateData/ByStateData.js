@@ -9,6 +9,8 @@ const ByStateData = (obj) => {
     onVentilatorCurrently,
     total,
     totalTestResults,
+    positive,
+    negative,
   } = obj.data;
   const options = {
     scale: {
@@ -22,27 +24,11 @@ const ByStateData = (obj) => {
     },
   };
   const data = {
-    backgroundColor: '#9e0b0b',
-    labels: [
-      'Currently Hospitalized',
-      'Hospitalized Cumulative',
-      'Death',
-      'Recovered',
-      'Currently On Ventilator',
-      'Total',
-      'Total Tested',
-    ],
+    labels: ['Positive Tests', 'Negative Tests', 'Death', 'Total', 'Recovered'],
     datasets: [
       {
-        data: [
-          hospitalizedCurrently,
-          hospitalizedCumulative,
-          death,
-          recovered,
-          onVentilatorCurrently,
-          total,
-          totalTestResults,
-        ],
+        backgroundColor: '#9e0b0b',
+        data: [positive, negative, death, total, recovered],
       },
     ],
   };
