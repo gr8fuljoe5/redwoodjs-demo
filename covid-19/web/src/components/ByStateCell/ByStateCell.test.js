@@ -10,6 +10,9 @@ describe('ByStateCell', () => {
   it('Loading renders successfully', () => {
     render(<Loading />);
     // Use screen.debug() to see output.
+
+
+    
     expect(screen.queryByText('Loading...')).toBeInTheDocument();
   });
 
