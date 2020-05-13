@@ -7,17 +7,18 @@
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
-import { Router, Route } from '@redwoodjs/router'
+import { Router, Route } from '@redwoodjs/router';
 
 const Routes = () => {
   return (
     <Router>
+      <Route path="/all-states" page={AllStatesPage} name="allStates" />
       <Route path="/by-state" page={ByStatePage} name="byState" />
       <Route path="/current" page={CurrentPage} name="current" />
       <Route path="/" page={HomePage} name="home" />
       <Route notfound page={NotFoundPage} />
     </Router>
-  )
-}
+  );
+};
 
-export default Routes
+export default Routes;

@@ -5,6 +5,7 @@ export const getCurrent = async () => {
     'https://covidtracking.com/api/v1/us/current.json'
   );
   const json = await response.json();
+  console.log('response', response);
   console.log('json', json);
 
   const {
@@ -79,4 +80,10 @@ export const getByState = async ({ state }) => {
     positive,
     negative,
   };
+};
+
+export const getAllStates = async () =>{
+  const response = await fetch('https://covidtracking.com/api/v1/states/current.json');
+  const json = await response.json();
+  return json;
 };

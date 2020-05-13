@@ -1,4 +1,4 @@
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@redwoodjs/router';
 
 const MainLayout = ({ children }) => {
   return (
@@ -8,10 +8,28 @@ const MainLayout = ({ children }) => {
         <nav>
           <ul className="flex">
             <li className="mr-6">
-              <Link className="text-blue-500 hover:text-blue-800" to={routes.byState()}>By State</Link>
+              <Link
+                className="text-blue-500 hover:text-blue-800"
+                to={routes.allStates()}
+              >
+                All States
+              </Link>
             </li>
             <li className="mr-6">
-              <Link className="text-blue-500 hover:text-blue-800" to={routes.current()}>Current</Link>
+              <Link
+                className="text-blue-500 hover:text-blue-800"
+                to={routes.byState()}
+              >
+                By State
+              </Link>
+            </li>
+            <li className="mr-6">
+              <Link
+                className="text-blue-500 hover:text-blue-800"
+                to={routes.current()}
+              >
+                Current
+              </Link>
             </li>
           </ul>
         </nav>

@@ -1,10 +1,14 @@
+import AllStateData from '../AllStateData';
+
 export const QUERY = gql`
   query {
-    current: getCurrent {
+    allState: getAllStates {
+      state
       total
       positive
       negative
-      pending
+      death
+      recovered
     }
   }
 `;
@@ -15,7 +19,6 @@ export const Empty = () => <div>Empty</div>;
 
 export const Failure = ({ error }) => <div>Error: {error.message}</div>;
 
-export const Success = ({ current }) => {
-  console.log('current', current)
-  return <h1>CURRENT</h1>
+export const Success = ({ allState }) => {
+  return <AllStateData data={allState} />;
 };

@@ -1,14 +1,14 @@
 import { render, cleanup } from '@testing-library/react';
 
-import MainLayout from './MainLayout';
+import AllStatesPage from './AllStatesPage';
 
-describe('MainLayout', () => {
+describe('AllStatesPage', () => {
   afterEach(() => {
     cleanup();
   });
   it('renders successfully', () => {
     expect(() => {
-      render(<MainLayout />);
+      render(<AllStatesPage />);
     }).not.toThrow();
   });
 });

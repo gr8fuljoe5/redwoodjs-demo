@@ -3,7 +3,7 @@ import { Form, TextField, Submit } from '@redwoodjs/web';
 import ByStateCell from '../../components/ByStateCell';
 import MainLayout from '../../layouts/MainLayout';
 
-const HomePage = () => {
+const ByStatePage = () => {
   const [usState, setUsState] = useState();
   const onSubmit = (data) => {
     setUsState(data);
@@ -39,4 +39,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default ByStatePage;
