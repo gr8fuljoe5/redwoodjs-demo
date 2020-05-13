@@ -11,8 +11,6 @@ describe('ByStateCell', () => {
     render(<Loading />);
     // Use screen.debug() to see output.
 
-
-    
     expect(screen.queryByText('Loading...')).toBeInTheDocument();
   });
 

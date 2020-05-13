@@ -1,14 +1,14 @@
-import { render, cleanup } from '@testing-library/react'
+import { render, cleanup } from '@testing-library/react';
 
-import ByStatePage from './ByStatePage'
+import ByStatePage from './ByStatePage';
 
 describe('ByStatePage', () => {
   afterEach(() => {
-    cleanup()
-  })
+    cleanup();
+  });
   it('renders successfully', () => {
     expect(() => {
-      render(<ByStatePage />)
-    }).not.toThrow()
-  })
-})
+      render(<ByStatePage />);
+    }).not.toThrow();
+  });
+});

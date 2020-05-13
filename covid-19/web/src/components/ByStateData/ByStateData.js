@@ -1,38 +1,23 @@
-import { Radar } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 
 const ByStateData = (obj) => {
-  const {
-    hospitalizedCurrently,
-    hospitalizedCumulative,
-    death,
-    recovered,
-    onVentilatorCurrently,
-    total,
-    totalTestResults,
-    positive,
-    negative,
-  } = obj.data;
-  const options = {
-    scale: {
-      angleLines: {
-        display: false,
-      },
-      ticks: {
-        suggestedMin: 50,
-        suggestedMax: 100,
-      },
-    },
-  };
+  const { death, recovered, total, positive, negative } = obj.data;
   const data = {
     labels: ['Positive Tests', 'Negative Tests', 'Death', 'Total', 'Recovered'],
     datasets: [
       {
-        backgroundColor: '#9e0b0b',
+        backgroundColor: [
+          'rgba(206, 102, 186, 0.3)',
+          'rgba(193, 228, 37, 0.3)',
+          'rgba(60, 91, 55, 0.3)',
+          'rgba(139, 255, 149, 0.3)',
+          'rgba(109, 77, 178, 0.3)',
+        ],
         data: [positive, negative, death, total, recovered],
       },
     ],
   };
-  return <Radar data={data} options={options} />;
+  return <Doughnut data={data} />;
 };
 
 export default ByStateData;
